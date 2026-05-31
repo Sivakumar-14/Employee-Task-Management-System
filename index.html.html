@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Task Management</title>
+  <style>
+        /* Modern and simple way to center everything in full screen */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* This takes full window height to center vertically */
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 380px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Adds a slight neat border shadow */
+        }
+        
+        input, textarea, select {
+            width: 92%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            width: 97%;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Task Assignment Form</h2>
+    
+    <label>Employee ID:</label><br>
+    <input type="text" id="empId" placeholder="e.g., EMP101"><br>
+
+    <label>Employee Name:</label><br>
+    <input type="text" id="empName" placeholder="e.g., Name"><br>
+    
+    <label>Task Title:</label><br>
+    <input type="text" id="taskTitle" placeholder="e.g., Database Setup"><br>
+    
+    <label>Task Description:</label><br>
+    <textarea id="taskDesc" rows="3" placeholder="Enter details..."></textarea><br>
+
+    <label>Task Status:</label><br>
+    <select id="taskStatus">
+        <option value="">-- Select Status --</option>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+    </select><br>
+    
+    <button type="button" onclick="sendDataToBackend()">Assign Task</button>
+    
+    <p id="resultMessage" style="font-weight: bold; margin-top: 15px;"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
